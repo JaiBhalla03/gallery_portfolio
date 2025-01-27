@@ -33,7 +33,7 @@ export default function About() {
                 transition={{duration: 1, ease: 'easeInOut'}}
             >
                 <Image src={AboutImage} alt='' className='w-[32rem] h-[32rem] object-cover mx-auto z-10'/>
-                <div className='absolute w-[40rem] right-0 bottom-0'>
+                <div className='absolute w-[40rem] right-0 -bottom-4 text-right'>
                     At Möbius, photography is more than capturing images - it's about 
                     creating timeless art that reflects your unique story. 
                     With over a decade of experience, we special<i className='text-gray-300 not-italic'>ize in 
@@ -47,7 +47,7 @@ export default function About() {
             <motion.div className='flex pl-32'>
                 <Image src={AboutImage2} alt='' className='w-[80%]'/>
             </motion.div>
-            <motion.div className='absolute top-1/4 right-32'>
+            <motion.div className=  'absolute top-1/4 right-32'>
                 <Image src={AboutImage3} alt='' className='w-96 filter grayscale'/>
             </motion.div>
         </div>

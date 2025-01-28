@@ -35,7 +35,7 @@ export default function About() {
                 <Image src={AboutImage} alt='' className='w-[32rem] h-[32rem] object-cover mx-auto z-10'/>
                 <div className='absolute w-[40rem] right-0 -bottom-4 text-right'>
                     At Möbius, photography is more than capturing images - it's about 
-                    creating timeless art that reflects your unique story. 
+                    creating timeless art that reflec   ts your unique story. 
                     With over a decade of experience, we special<i className='text-gray-300 not-italic'>ize in 
                     turning moments into lifelong memories. Our passion lies 
                     in every frame, and our mission is simple: to bring your vision to life.</i>

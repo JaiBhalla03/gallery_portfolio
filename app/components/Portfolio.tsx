@@ -33,7 +33,11 @@ export default function Portfolio() {
                     SERVICES
                 </div>
         </div>
-        <div className='flex w-full justify-between'>
+        <motion.div className='flex w-full justify-between'
+          initial={{ opacity: 0, y: 500 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           <div className='w-1/2 flex justify-end px-20 pb-20'>
           {/* Render the image based on selectedId */}
           <motion.div
@@ -64,7 +68,7 @@ export default function Portfolio() {
             </li>
           ))}
         </ul>
-        </div>
+        </motion.div>
         <div className='h-[0.15rem] bg-[#161616] w-full'></div>        
     </div>
   )

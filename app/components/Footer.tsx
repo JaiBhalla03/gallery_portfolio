@@ -1,13 +1,19 @@
+'use client';
 import Image from 'next/image'
 import React from 'react'
 import footerImage from '../../public/images/footer-image.jpg'
+import {motion} from 'framer-motion';
 
 export default function Footer() {
   return (
     <div>
         <div className='w-[0.15rem] h-full bg-[#161616] absolute left-1/2 -translate-x-1/2'></div>
         <div className='px-12 pt-20 z-10'>
-            <div className='flex w-full justify-between'>
+            <motion.div className='flex w-full justify-between'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
                 <div className='flex flex-col gap-2'>
                     <div className='text-xl'>NAVIGATION</div>
                     <ul className='text-md font-[300] cursor-pointer'>
@@ -27,14 +33,18 @@ export default function Footer() {
                         <li className='hover:font-[500] transition-all duration-300'>LinkedIn</li>
                     </ul>
                 </div>
-            </div>
-            <div className='relative flex justify-center'>
+            </motion.div>
+            <motion.div className='relative flex justify-center'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
                 <Image src={footerImage} alt='' className='w-[30rem] h-[35rem] -translate-y-20 object-cover filter grayscale relative'/>
                 <div className='text-white flex flex-col justify-center absolute top-0 left-1/2 z-20 w-[30rem] h-[35rem] -translate-y-20 -translate-x-1/2 text-center'>
                     <div className='text-md'>Ready to create something extraordinary?</div>
                     <div className='text-[6rem]'>Let's Talk</div>
                 </div>
-            </div>
+            </motion.div>
         </div>
         <div className='h-[0.1rem] bg-[#161616] w-full'></div>        
         <div className='py-4 flex w-full justify-between px-12'>

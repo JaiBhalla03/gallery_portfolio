@@ -10,8 +10,6 @@ import {useRef} from 'react';
 
 
 export default function About() {
-    const ref = useRef(null); // Create a ref for the element
-    const isInView = useInView(ref, { margin: '-10% 0px', once: true }); // Hook to check visibility
   return (
     <div className='relative font-poppins'>
         <div className='h-[0.15rem] bg-[#161616] w-full'></div>
@@ -23,31 +21,43 @@ export default function About() {
 </svg>
                 ABOUT US
             </div>
-            <div className='text-[6rem] leading-[6rem] w-1/2 font-[500] py-10'>
+            <motion.div className='text-[6rem] leading-[6rem] w-1/2 font-[500] py-10'
+                initial={{ opacity: 0, y: 200 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
                 We Capture Meaning
-            </div>
-            <motion.div className='z-10 relative'
-                ref={ref}
-                initial={{y: 1000}}
-                animate={{y: -130}}
-                transition={{duration: 1, ease: 'easeInOut'}}
+            </motion.div>
+            <div className='z-10 relative'
             >
                 <Image src={AboutImage} alt='' className='w-[32rem] h-[32rem] object-cover mx-auto z-10'/>
-                <div className='absolute w-[40rem] right-0 -bottom-4 text-right'>
+                <motion.div className='absolute w-[40rem] right-0 -bottom-4 text-right'
+                    initial={{ opacity: 0, x: 200 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                     At Möbius, photography is more than capturing images - it's about 
                     creating timeless art that reflec   ts your unique story. 
                     With over a decade of experience, we special<i className='text-gray-300 not-italic'>ize in 
                     turning moments into lifelong memories. Our passion lies 
                     in every frame, and our mission is simple: to bring your vision to life.</i>
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
         </div>
         <div className='h-[0.15rem] bg-[#161616] w-full'></div>
         <div className='py-20 z-10 relative'>
-            <motion.div className='flex pl-32'>
+            <motion.div className='flex pl-32'
+                        initial={{ opacity: 0, rotate: 100, x: -1000}}
+                        whileInView={{ opacity: 1, rotate: 0 , x: 0}}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+            >
                 <Image src={AboutImage2} alt='' className='w-[80%]'/>
             </motion.div>
-            <motion.div className=  'absolute top-1/4 right-32'>
+            <motion.div className=  'absolute top-1/4 right-32'
+                        initial={{ opacity: 0, scale: 0.6}}
+                        whileInView={{ opacity: 1, scale: 1}}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+            >
                 <Image src={AboutImage3} alt='' className='w-96 filter grayscale'/>
             </motion.div>
         </div>
